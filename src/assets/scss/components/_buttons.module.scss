@@ -1,0 +1,8 @@
+@import '../base/variables';
+@import '../base/mixin';
+.btn {
+  .spinnerBorder {
+    width: 18px;
+    height: 18px;
+  }
+}

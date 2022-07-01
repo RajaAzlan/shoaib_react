@@ -1,0 +1,221 @@
+@import '../base/variables';
+%label-animation {
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+%border-input {
+  background: none;
+  border: 1.6px solid #d2d2d2;
+  border-radius: 4px;
+  height: 47px;
+  padding: 10px 30px 7px 17px;
+  &:focus {
+    border-color: color(primary-admin);
+    + .selectLabel {
+      color: color(primary-admin);
+    }
+  }
+}
+form {
+  input {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+  &.customForm {
+    input,
+    textarea,
+    select {
+      padding: 5px 0;
+      border: none;
+      background: no-repeat center bottom, center calc(100% - 1px);
+      background-size: 0 100%, 100% 100%;
+      height: 36px;
+      transition: background 0s ease-out;
+      background-image: linear-gradient(
+          to top,
+          color(primary-admin) 2px,
+          rgba(156, 39, 176, 0) 2px
+        ),
+        linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+      font-size: 14px;
+      color: color(input);
+      border-radius: 0;
+      z-index: 1;
+      &:focus,
+      &:active,
+      &.active {
+        background-color: transparent;
+        background-size: 100% 100%, 100% 100%;
+        transition-duration: 0.3s;
+        box-shadow: none;
+        outline: none;
+        + .placeholderLabel {
+          transform: translate(0, 4px) scale(0.75);
+          @extend %label-animation;
+        }
+      }
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-transition-delay: 9999s;
+        transition-delay: 9999s;
+        border-bottom: 2px solid color(primary-admin) !important;
+      }
+      &::placeholder {
+        color: color(placeholder);
+      }
+      &[disabled],
+      &.disabled {
+        background: lighten(color(light-gray), $amount: 30);
+        border-radius: 3px;
+      }
+      &.invalid {
+        background-image: linear-gradient(
+            to top,
+            color(multi-cancel) 2px,
+            rgba(156, 39, 176, 0) 2px
+          ),
+          linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+        background-size: 100% 100%, 100% 100%;
+      }
+      &.inputIcon {
+        padding-right: 40px;
+      }
+      &.iconLeft {
+        padding-left: 34px;
+      }
+      &.borderInput {
+        @extend %border-input;
+        + label {
+          &.placeholderLabel {
+            background-color: #fff;
+            padding: 0 0 0 10px;
+            display: inline-block;
+            z-index: 0;
+            left: 8px;
+          }
+        }
+        &:focus,
+        &.active {
+          + label {
+            &.placeholderLabel {
+              z-index: 1;
+              transform: translate(0, 4px) scale(1);
+            }
+          }
+        }
+      }
+    }
+    textarea {
+      min-height: 45px;
+    }
+    select {
+      &.customSelect {
+        @extend %border-input;
+        option {
+          font-size: 14px;
+          color: color(input);
+        }
+      }
+    }
+    .selectLabel {
+      color: color(placeholder);
+      font-size: $font-placeholder;
+      top: -10px;
+      left: 12px;
+      background: #fff;
+      padding: 0 6px;
+    }
+    .selectArrow {
+      color: color(light-gray);
+      font-size: 13px;
+      top: 19px;
+      right: 14px;
+    }
+    .invalidMessage {
+      font-size: 14px;
+      color: color(multi-cancel);
+      width: 100%;
+    }
+    textarea {
+      height: 54px;
+      overflow: auto !important;
+      &.resize-none {
+        resize: none;
+      }
+    }
+    label {
+      &.placeholderLabel {
+        position: absolute;
+        color: color(placeholder);
+        font-size: $font-placeholder;
+        font-weight: 400;
+        transform: translate(0, 24px) scale(1);
+        transform-origin: top left;
+        top: -13px;
+        z-index: 0;
+        width: 100%;
+        left: 0;
+        @extend %label-animation;
+        &.transform-none {
+          transform: none;
+        }
+      }
+    }
+    select {
+      option {
+        font-size: 15px;
+      }
+    }
+    .formGroup {
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .inputBtn {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      color: color(primary-admin);
+      right: -8px;
+      font-size: 22px;
+      z-index: 6;
+      top: -4px;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .iconLeftPlacement {
+      top: 5px;
+      left: 61px;
+    }
+    .uploadImage {
+      figure {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+        svg {
+          width: 40px;
+          height: 40px;
+          background-color: color(action-edit);
+          padding: 7px;
+          top: 0;
+          right: 0;
+          border: 4px solid #fff;
+        }
+      }
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}

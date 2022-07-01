@@ -1,0 +1,143 @@
+@import '../base/variables';
+@import '../base/mixin';
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 4px 4px 0 0;
+  table {
+    &.custom-table {
+      width: 100%;
+      thead {
+        border-radius: 4px 4px 0 0;
+        tr {
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd;
+          th {
+            font-size: 1.063rem;
+            font-weight: 300;
+            color: color(primary-admin);
+            border: none;
+            &:focus {
+              outline: none;
+            }
+            &.action {
+              text-align: right;
+            }
+          }
+        }
+        &.small-font {
+          tr {
+            th {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            font-size: 14px;
+            font-weight: 300;
+            color: color(table-td);
+            a,
+            button {
+              color: color(primary-admin);
+            }
+            &.action {
+              a,
+              button {
+                margin: 0;
+                min-width: 38px;
+                min-height: 38px;
+                line-height: 38px;
+                border-radius: 50%;
+                transition: all 0.3s linear;
+                &.edit {
+                  color: color(primary-admin);
+                }
+                svg {
+                  font-size: 20px;
+                  vertical-align: middle;
+                }
+                &:focus {
+                  outline: none;
+                }
+                &:hover {
+                  background-color: lighten(color(light-gray), $amount: 28);
+                  box-shadow: 0 0 4px rgba(136, 136, 136, 0.3);
+                  transition: all 0.3s linear;
+                }
+              }
+              &.two-content {
+                min-width: 79px;
+              }
+            }
+          }
+          border-bottom: 1px solid #ddd;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+      th,
+      td {
+        padding: 12px 8px;
+      }
+    }
+    &.shop-table {
+      @media screen and (max-width: 700px) {
+        min-width: 700px;
+      }
+    }
+    &.product-table {
+      @media screen and (max-width: 1307px) {
+        min-width: 953px;
+      }
+    }
+    &.billing-table {
+      thead {
+        tr {
+          border-bottom: none;
+          th {
+            color: lighten(color(gray-color), $amount: 4);
+            padding-bottom: 0;
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            font-size: 17px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+    background-color: #f3d0fb;
+    border-radius: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #a65ab7;
+  }
+}
+.bill-wrapper {
+  .table-responsive {
+    background-color: lighten(color(light-gray), $amount: 24);
+    border-radius: 6px;
+    padding: 0 0 0 10px;
+  }
+}

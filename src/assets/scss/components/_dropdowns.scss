@@ -1,0 +1,59 @@
+@import '../base/variables';
+.dropdown-custom {
+  &.dropdown {
+    button {
+      &.btn {
+        box-shadow: none;
+        padding: 7px 13.5px;
+        margin-left: 5px;
+        svg {
+          font-size: 24px;
+          margin-right: 3px;
+          color: color(gray-color);
+        }
+      }
+    }
+    .dropdown-menu {
+      display: block;
+      padding: 0.3125rem 0;
+      border: none;
+      transform-origin: 100% 0;
+      transform: scale(0) !important;
+      inset: 47px auto auto -73px !important;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      background-color: #fff;
+      border-radius: 4px;
+      min-width: 120px;
+      list-style: none;
+      z-index: 7;
+      li {
+        a {
+          margin: 0 4px;
+          padding: 4px 10px;
+          font-size: 15px;
+          width: auto;
+          border-radius: 4px;
+          color: color(table-td);
+          transition: all 150ms linear;
+          &:hover {
+            background-color: color(primary-admin);
+            box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+              0 7px 10px -5px rgba(156, 39, 176, 0.4);
+            color: #fff;
+            transition: all 150ms linear;
+          }
+        }
+        &:last-child {
+          a {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &.show {
+        transform: scale(1) !important;
+      }
+    }
+  }
+}

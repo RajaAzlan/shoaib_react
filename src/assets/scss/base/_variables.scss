@@ -1,0 +1,22 @@
+$colors: (
+  'body-color': #eee,
+  'primary-admin': #ab47bc,
+  'secondary-color': #ff9800,
+  'heading-color': #fff,
+  'placeholder': #aab0c1,
+  'gray-color': #555,
+  'input': #495057,
+  'mobile-sidebar': #f0f0f0,
+  'light-gray': #aaa,
+  'primary-gradient': linear-gradient(60deg, #ab47bc, #8e24aa),
+  'table-td': #333,
+  'action-edit': #4caf50,
+  'action-cancel': #f44336,
+  'warning': #facea8,
+  'switch': #eee,
+  'multi-cancel': #ff6a6a,
+);
+$font-placeholder: 14px;
+@function color($ColorName) {
+  @return map-get($colors, $ColorName);
+}

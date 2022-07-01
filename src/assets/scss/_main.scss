@@ -1,0 +1,142 @@
+@import '@/assets/scss/base/variables';
+@import '@/assets/scss/base/mixin';
+@import '@/assets/scss/base/typography';
+// Above Custom scss is imported so that we can change the bootstrap variables colors
+$primary: color(primary-color);
+$secondary: color(secondary-color);
+$danger: color(dark-red);
+$dark: color(primary-admin);
+// Bootstrap scss that wee nedded in this project
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/bootstrap-utilities';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/nav';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.bg-graiest {
+  background-color: color(light-gray);
+}
+.container-large-fluid {
+  @media screen and (min-width: 1400px) {
+    max-width: 1399px;
+  }
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 38px;
+  @media screen and (max-width: 991px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 26px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 20px;
+  }
+}
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size: 24px;
+  @media screen and (max-width: 991px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+h4 {
+  font-size: 20px;
+  @media screen and (max-width: 991px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 16px;
+  }
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+ul {
+  &.list-unstyled,
+  &.pagination {
+    list-style-type: none;
+  }
+  &.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 20px 0 0;
+    li {
+      &:not(:last-child) {
+        margin-right: 14px;
+      }
+      a {
+        &[role='button'] {
+          color: color(gray-color);
+        }
+        &[rel='canonical'] {
+          display: inline-block;
+          font-size: 14px;
+          background-color: lighten(color(light-gray), $amount: 10);
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          border-radius: 50%;
+        }
+      }
+      &.active {
+        a {
+          & {
+            background-color: color(primary-admin);
+            color: color(heading-color);
+            box-shadow: 0 0 4px rgba(color(primary-admin), 0.4);
+            &:hover {
+              color: color(heading-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-15 {
+  font-size: 15px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.inner-content {
+  .react-datepicker-popper {
+    z-index: 2;
+  }
+}
